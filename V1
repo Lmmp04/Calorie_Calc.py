@@ -1,0 +1,72 @@
+#!/bin/python3
+#This was made in June 2024 by Leo Platti to practice my app developing skills by making a useful application that can be used to calculate intake of important daily nutrients
+#My goal is to develop a working calculator for said purposes then go through and add a gui to it for ease of access!
+import os
+import math
+print("-"*55)
+print("Welcome to Calorie Calc, the app for all of your nutritious needs")
+#Function for calculating full meal
+def meal_calc():
+    print("")
+    name = input("Enter name of meal to be calculated: ")
+    ingredient_num = int(input("Enter number of ingredients to be input: "))
+    for i in range(0, ingredient_num, + 1):
+        name1 = input("Enter the name of ingredient: ")
+        servings = int(input("Enter number of servings to be had: "))
+        calories = int(input("Enter calories: "))
+        fat = int(input("Enter fat (grams): "))
+        cholesterol = int(input("Enter cholesterol (grams): "))
+        sodium = int(input(("Enter sodium (grams): ")))
+        carbs = int(input("Enter carbs (grams): "))
+        fiber = int(input("Enter fiber (grams): "))
+        sugar = int(input("Enter sugar (grams): "))
+        protein = int(input("Enter protein (grams): "))
+    print("")
+    print(name), print("Servings:", servings)
+    print("Calories:", calories*servings, "g"), print("Fat:", fat*servings, "g") 
+    print("Cholesterol:", cholesterol*servings, "g"), print("Sodium:", sodium*servings, "g"), print("Carbs:", carbs*servings, "g"), 
+    print("Fiber", fiber*servings, "g"), print("Sugar:", sugar*servings, "g"), print("Protein:", protein*servings, "g")
+#Function for calculating single or numerous portions
+def portion_calc():
+    print("")
+    name = input("Enter name of portion to be calculated: ")    
+    servings = int(input("Enter number of servings to be calculated: "))
+    calories = int(input("Enter calories: "))
+    fat = int(input("Enter fat (grams): "))
+    cholesterol = int(input("Enter cholesterol (grams): "))
+    sodium = int(input("Enter sodium (grams): "))
+    total_carbs = int(input("Enter carbs (grams): "))
+    fiber = int(input("Enter fiber (grams): "))
+    sugar = int(input("Enter sugar (grams): "))
+    protein = int(input("Enter protein (grams): "))
+    print("")
+    print(name), print("Servings:", servings)
+    print("Calories", calories*servings, "g"), print("Fat:", fat*servings, "g") 
+    print("Cholesterol", cholesterol*servings, "g"), print("Sodium:", sodium*servings, "g"), print("Carbs:", carbs*servings, "g"), 
+    print("Fiber", fiber*servings, "g"), print("Sugar:", sugar*servings, "g"), print("Protein:", protein*servings, "g")
+#Function for Beverage and liquid calculator
+def drink_calc():
+    print("")
+    name = input("Enter name of beverage to be calculated: ")    
+    servings = int(input("Enter number of servings to be calculated: "))
+    sugars = int(input("Enter sugar (grams): "))
+    sodium = int(input("Enter sodium (grams): "))
+    carbohydrate = int(input("Enter Carbohydrates (grams): "))
+    protein = int(input("Enter protein (grams): "))
+    print("")
+    print(name), print("Servings:", servings),
+    print("Sugar:", sugars*servings, "g"), print("Sodium:", sodium*servings, "g")
+    print("Carbohydrate:", carbohydrate*servings, "g"), print("Protein:", protein*servings, "g")
+#Main Function calling on input output
+def main():
+    input1 = input("[A] Meal Calculator, [B] Portion Calculator, [C] Drink Calculator: ")
+    if input1 == "A":
+        meal_calc()
+    if input1 == "B":
+        portion_calc()
+    if input1 == "C":
+        drink_calc()
+    else:
+        print("Invalid input please retry")
+        quit()
+main()
